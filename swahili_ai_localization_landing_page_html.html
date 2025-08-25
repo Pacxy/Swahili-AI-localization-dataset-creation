@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swahili AI Localization & Data Services</title>
+  <meta name="description" content="AI-ready Swahili datasets, transcription, translation, and integration for NGOs, startups, and researchers in East Africa." />
+  <style>
+    :root{
+      --bg:#0b0f14;      /* deep slate */
+      --card:#11161d;    /* card surface */
+      --muted:#9fb0c2;   /* muted text */
+      --text:#e6eef6;    /* main text */
+      --brand:#42c6ff;   /* accent */
+      --brand-2:#56f0a5; /* secondary accent */
+      --border:#1d2732;
+    }
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    /* Header */
+    header{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,15,20,.95),rgba(11,15,20,.7));backdrop-filter:blur(6px);border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 210deg at 50% 50%,var(--brand),var(--brand-2));box-shadow:0 0 40px rgba(66,198,255,.25)}
+    .brand h1{font-size:1.05rem;margin:0;font-weight:700;letter-spacing:.2px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600;color:var(--muted)}
+    nav a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:linear-gradient(180deg,#121923,#0e141c);padding:10px 14px;border-radius:12px;font-weight:700}
+    .btn.primary{border-color:transparent;background:linear-gradient(180deg,var(--brand),#2391c0);color:#001018}
+    .btn.primary:hover{filter:brightness(1.05)}
+    .btn:hover{border-color:#2a394a}
+
+    /* Hero */
+    .hero{padding:70px 0 40px;}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .eyebrow{color:var(--brand-2);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
+    .h{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.15;margin:.35em 0;font-weight:900}
+    .sub{color:var(--muted);font-size:1.05rem}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .hero-card{background:radial-gradient(1200px 600px at 110% -10%,rgba(86,240,165,.08),transparent 50%),radial-gradient(1200px 600px at -10% 120%,rgba(66,198,255,.08),transparent 40%), var(--card);border:1px solid var(--border);padding:18px;border-radius:16px}
+    .mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .pill{border:1px dashed #244055;border-radius:999px;padding:8px 12px;color:var(--muted);font-size:.9rem;text-align:center}
+
+    /* Sections */
+    section{padding:60px 0;border-top:1px solid var(--border)}
+    .section-title{font-size:1.6rem;margin:0 0 10px;font-weight:800}
+    .section-sub{color:var(--muted);margin:0 0 22px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
+    .card h3{margin:6px 0 8px;font-size:1.1rem}
+    .ic{width:28px;height:28px;border-radius:8px;display:inline-grid;place-items:center;background:linear-gradient(180deg,rgba(66,198,255,.15),rgba(66,198,255,.03));border:1px solid #25485a}
+    .muted{color:var(--muted)}
+
+    .process{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .step{position:relative;padding:16px;border-radius:14px;background:linear-gradient(180deg,rgba(86,240,165,.06),rgba(86,240,165,.02));border:1px solid #274b3a}
+    .step b{display:block;margin-bottom:6px}
+
+    .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .price{background:linear-gradient(180deg,rgba(66,198,255,.06),rgba(66,198,255,.02));border:1px solid #274a5e;border-radius:16px;padding:16px}
+    .price h4{margin:6px 0}
+    .price .num{font-size:1.8rem;font-weight:900}
+
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .contact .box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px}
+
+    footer{padding:30px 0;border-top:1px solid var(--border);color:var(--muted)}
+    .tiny{font-size:.86rem}
+
+    @media (max-width:860px){
+      .hero .grid{grid-template-columns:1fr}
+      .mini{grid-template-columns:1fr 1fr}
+      .contact{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Swahili AI Localization</h1>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn" href="#contact" aria-label="Jump to contact">Let’s talk</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap grid">
+        <div>
+          <div class="eyebrow">AI-ready data for East Africa</div>
+          <h2 class="h">AI‑Ready Swahili Datasets, Transcription & Translation — Done Right</h2>
+          <p class="sub">We help AI teams, NGOs, and researchers adapt products and datasets for Swahili and East African languages. Better accuracy, faster delivery, local context.</p>
+          <div class="cta">
+            <!-- TODO: replace email and Calendly links below -->
+            <a class="btn primary" href="mailto:your-email@example.com?subject=Project%20Inquiry%20-%20Swahili%20AI%20Localization">Get a quote</a>
+            <a class="btn" href="#services">See services</a>
+          </div>
+          <div class="mini">
+            <div class="pill">Swahili • English</div>
+            <div class="pill">Datasets • Transcription • Translation</div>
+            <div class="pill">NGOs • Startups • Universities</div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="tiny muted">Sample outcomes</div>
+          <ul class="tiny" style="margin:8px 0 0 18px">
+            <li><b>+30–60%</b> STT accuracy on Swahili accents after fine-tuning</li>
+            <li><b>3× faster</b> report generation with AI-assisted workflows</li>
+            <li><b>98%+</b> human‑verified translation quality for health/legal</li>
+          </ul>
+          <div class="tiny muted" style="margin-top:12px">(Replace with your real metrics once you have pilot results.)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="wrap">
+        <h2 class="section-title">Services</h2>
+        <p class="section-sub">Modular offerings you can mix and match for your project.</p>
+        <div class="cards">
+          <article class="card" aria-labelledby="s1">
+            <div class="ic" aria-hidden="true">📦</div>
+            <h3 id="s1">AI‑Ready Dataset Creation</h3>
+            <p class="muted">Collect, clean, and label Swahili/English text & audio for model training. Includes QA and documentation.</p>
+          </article>
+          <article class="card" aria-labelledby="s2">
+            <div class="ic" aria-hidden="true">🎙️</div>
+            <h3 id="s2">Transcription & Translation</h3>
+            <p class="muted">Fast, accurate transcription and human‑verified translation for health, legal, education, and media.</p>
+          </article>
+          <article class="card" aria-labelledby="s3">
+            <div class="ic" aria-hidden="true">🧠</div>
+            <h3 id="s3">Model Fine‑Tuning Support</h3>
+            <p class="muted">Work with your engineers to adapt speech and text models to Swahili & regional dialects.</p>
+          </article>
+          <article class="card" aria-labelledby="s4">
+            <div class="ic" aria-hidden="true">🔌</div>
+            <h3 id="s4">Workflow Integration</h3>
+            <p class="muted">Integrate AI tools (STT, MT, summarization) into your research or reporting pipeline.</p>
+          </article>
+          <article class="card" aria-labelledby="s5">
+            <div class="ic" aria-hidden="true">📚</div>
+            <h3 id="s5">Training & Workshops</h3>
+            <p class="muted">Practical trainings for teams on using AI responsibly in local contexts — in English or Swahili.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="wrap">
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-sub">Clear steps. Predictable delivery. Documented quality.</p>
+        <div class="process">
+          <div class="step">
+            <b>1) Discovery</b>
+            <div class="muted tiny">Understand goals, volume, deadlines, and domain (health/legal/education).</div>
+          </div>
+          <div class="step">
+            <b>2) Pilot</b>
+            <div class="muted tiny">Small paid pilot to lock accuracy, tone, and workflow.</div>
+          </div>
+          <div class="step">
+            <b>3) Production</b>
+            <div class="muted tiny">Scale with QA loops, glossary management, and weekly progress reports.</div>
+          </div>
+          <div class="step">
+            <b>4) Handover</b>
+            <div class="muted tiny">Deliver data, docs, and improvement notes for your next iteration.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="wrap">
+        <h2 class="section-title">Simple Pricing</h2>
+        <p class="section-sub">Transparent starters — customise for larger engagements.</p>
+        <div class="pricing">
+          <div class="price" aria-labelledby="p1">
+            <div class="tiny muted">Starter</div>
+            <h4 id="p1">Pilot Package</h4>
+            <div class="num">$99</div>
+            <ul class="tiny" style="margin:8px 0 0 18px">
+              <li>Up to 60 mins audio transcription</li>
+              <li>or 1,500 words translation</li>
+              <li>48–72h turnaround</li>
+            </ul>
+          </div>
+          <div class="price" aria-labelledby="p2">
+            <div class="tiny muted">Most popular</div>
+            <h4 id="p2">Monthly Retainer</h4>
+            <div class="num">$500–$1,000</div>
+            <ul class="tiny" style="margin:8px 0 0 18px">
+              <li>Ongoing transcription & translation</li>
+              <li>Glossary + QA included</li>
+              <li>Priority support</li>
+            </ul>
+          </div>
+          <div class="price" aria-labelledby="p3">
+            <div class="tiny muted">Custom</div>
+            <h4 id="p3">Datasets & Fine‑Tuning</h4>
+            <div class="num">Quote</div>
+            <ul class="tiny" style="margin:8px 0 0 18px">
+              <li>Data collection & labeling</li>
+              <li>Evaluation & documentation</li>
+              <li>Engineer collaboration</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-top:14px" class="tiny muted">(Edit prices to match your market. Keep one low-risk entry offer.)</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap contact">
+        <div class="box">
+          <h2 class="section-title" style="margin-top:0">Let’s Work Together</h2>
+          <p class="section-sub">Tell us about your project — we’ll reply within 24 hours.</p>
+          <ul class="tiny" style="margin:0 0 18px 18px">
+            <li>Email: <a href="mailto:mussaubapa01@gmail.com">mussaubapa01@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/mussa-ubapa-pacxym/">https://www.linkedin.com/in/mussa-ubapa-pacxym/</a></li>
+            <li>Book a call: <a href="https://calendar.app.google/Mz5rUmBvf7ggiutq6">https://calendar.app.google/Mz5rUmBvf7ggiutq6</a></li>
+          </ul>
+          <div class="cta">
+            <a class="btn primary" href="mailto:mussaubapa01@gmail.com?subject=Let%27s%20work%20together">Email us</a>
+            <a class="btn" href="#pricing">See pricing</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="tiny muted">Why us</div>
+          <ul class="tiny" style="margin:8px 0 0 18px">
+            <li>Fluent Swahili ↔ English with domain context (health, legal, education)</li>
+            <li>Human‑in‑the‑loop QA for accuracy and safety</li>
+            <li>Fast pilots, scalable production, clean documentation</li>
+          </ul>
+          <div class="tiny muted" style="margin-top:10px">(Replace bullet points with your strongest proof as you complete projects.)</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap tiny">
+      <div>© <span id="y"></span> Swahili AI Localization — All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({behavior:'smooth'});
+        }
+      })
+    })
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
